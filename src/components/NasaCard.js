@@ -9,18 +9,18 @@ const NasaCard = props => {
     console.log("This is the nasaCardUrl: ", nasaCard.hdurl);
     console.log("This is the nasaCardTitle: ", nasaCard.title);
     useEffect(() => {
-
-    axios
-    .get("https://api.nasa.gov/planetary/apod?api_key=ywUpqj4ManmW6DKColcPqPSjymmffDDxTh4LJ0Sw")
-    .then(res => {
-        console.log("this is the response", res);
-        setNasaCard(res.data);
-        // setNasaCardTitle(res.data.title);
-    })
-    .catch(err =>{
-        console.log("This is the error you are recieving: ", err)
-    });
-    }, []);
+        axios
+            .get("https://api.nasa.gov/planetary/apod?api_key=ywUpqj4ManmW6DKColcPqPSjymmffDDxTh4LJ0Sw")
+            .then(res => {
+                console.log("this is the response", res);
+                setNasaCard(res.data);
+                // setNasaCardTitle(res.data.title);
+            })
+            .catch(err =>{
+                console.log("This is the error you are recieving: ", err)
+            });
+        }, []);
+        
     return(
         <div className="nasaCard">
              <NasaCardInfo
